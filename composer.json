@@ -1,12 +1,12 @@
 {
-    "name": "abdelhamiderrahmouni/project-zipper",
+    "name": "abdelhamiderrahmouni/zipper",
     "description": "Automate your Laravel project compression with a simple command.",
     "keywords": [
         "Abdelhamid Errahmouni",
         "laravel",
-        "project-zipper"
+        "zipper"
     ],
-    "homepage": "https://github.com/abdelhamiderrahmouni/project-zipper",
+    "homepage": "https://github.com/abdelhamiderrahmouni/zipper",
     "license": "MIT",
     "authors": [
         {
@@ -18,7 +18,7 @@
     "require": {
         "php": "^8.1",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "ext-zip": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -45,7 +45,7 @@
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-project-zipper --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-zipper --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",

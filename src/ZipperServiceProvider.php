@@ -16,10 +16,8 @@ class ZipperServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('project-zipper')
+            ->name('zipper')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_project-zipper_table')
             ->hasCommand(ZipperCommand::class);
     }
 }
