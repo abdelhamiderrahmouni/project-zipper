@@ -27,7 +27,12 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'excludes' => [
+        '.git',
+        'node_modules',
+    ],
 
+    'zipper.output_file_name' => null,
 ];
 ```
 
