@@ -4,15 +4,19 @@ namespace AbdelhamidErrahmouni\Zipper\Commands;
 
 use Illuminate\Console\Command;
 use ZipArchive;
+
 class ZipperCommand extends Command
 {
     protected $signature = 'zipper {--exclude= : Directories to exclude from the zip}';
+
     protected $description = 'Zip your project with ease.';
 
     public $excludes = [];
+
     public $projectName = '';
 
     public $projectPath;
+
     public $zipPath;
 
     public function handle()
@@ -69,18 +73,18 @@ class ZipperCommand extends Command
             }
 
             $filePath = $file->getRealPath();
-            $relativePath = substr($filePath, strlen($dir) +   1);
+            $relativePath = substr($filePath, strlen($dir) + 1);
 
             // Check if the file is in an excluded directory
             $shouldExclude = false;
             foreach ($toExclude as $exclude) {
-                if (strpos($relativePath, trim($exclude)) ===  0) {
+                if (strpos($relativePath, trim($exclude)) === 0) {
                     $shouldExclude = true;
                     break;
                 }
             }
 
-            if ($shouldExclude || !is_readable($filePath)) {
+            if ($shouldExclude || ! is_readable($filePath)) {
                 continue; // Skip the file if it's in an excluded directory or not readable
             }
 
@@ -102,7 +106,7 @@ class ZipperCommand extends Command
         $zipFileName = config('zipper.output_file_name') ?? strtolower(preg_replace('/(?<!\ )[A-Z]/', '_$0', $this->projectName));
 
         // Check if the folder exists
-        if (!file_exists($this->projectPath)) {
+        if (! file_exists($this->projectPath)) {
             return $this->error("Folder {$this->projectPath} does not exist.");
         }
 

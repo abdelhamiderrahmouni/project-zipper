@@ -2,9 +2,9 @@
 
 namespace AbdelhamidErrahmouni\Zipper;
 
+use AbdelhamidErrahmouni\Zipper\Commands\ZipperCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use AbdelhamidErrahmouni\Zipper\Commands\ZipperCommand;
 
 class ZipperServiceProvider extends PackageServiceProvider
 {

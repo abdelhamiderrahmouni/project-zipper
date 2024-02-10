@@ -2,9 +2,9 @@
 
 namespace AbdelhamidErrahmouni\Zipper\Tests;
 
+use AbdelhamidErrahmouni\Zipper\ZipperServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AbdelhamidErrahmouni\Zipper\ZipperServiceProvider;
 
 class TestCase extends Orchestra
 {
